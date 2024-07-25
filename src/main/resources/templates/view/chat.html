@@ -1,10 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-b">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat Famili</title>
 </head>
-<body>
-$END$
+<body id="body-chat">
+
+<style>
+    #body-chat{
+        margin:0 auto;
+        padding:0;
+        box-sizing:border-box;
+
+
+    }
+    h1 , h2 , h3 , h4 , h5 , h6{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color:white;
+    }
+    .container{
+        height:100vh;
+        display:flex;
+        background-color:#0000;
+
+    }
+    .side-bar-user{
+        background-color: #CDCDCD;
+        color: #fff;
+        box-sizing: border-box;
+        overflow-y: auto;
+        width:20%;
+
+    }
+    .side-bar-user .list-user{
+        list-style:none;
+        color: #222;
+        padding: 0;
+        margin: 0;
+
+
+    }
+    .list-user li{
+        width:100;
+        display: flex;
+        padding: 15px;
+
+
+    }
+    .header-user h4{
+        text-align:center;
+    }
+
+    .input-container {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .input-container input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+    .input-container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .topo{
+        background-color: #222;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin:0;
+        text-align:center;
+    }
+
+    .body-chat{
+        font-size: 24px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        width:80%;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-evenly;
+        overflow:scroll;
+    }
+    .message{
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 10px;
+        padding: 2px;
+        margin-bottom: 10px;
+        max-width: 30%;
+    }
+    div.message .outro {
+        background-color: #28a745;
+    }
+    div.message .eu {
+        background-color: #0473d5;
+    }
+
+</style>
+<header class="topo"><h3>Chat Familia Buscapé</h3></header>
+
+<div class="container">
+
+    <aside class="side-bar-user">
+        <header class="header-user"><h4>Usuarios Do Chat</h4></header>
+        <nav class="nav">
+            <ul class="list-user">
+                <li class="date-user">
+                    <span id="nome">carlos</span>
+                    <span id="content-foto">
+                        <img src="#" alt="excluido">
+                    </span>
+
+                </li>
+                <li class="date-user">
+                    <span id="nome"> Erick</span>
+                    <span id="content-foto">
+                        <img src="#" alt="excluido">
+                    </span>
+
+                </li>
+
+
+            </ul>
+        </nav>
+    </aside>
+    <main class="body-chat">
+        <ul class="list-message">
+            <li>
+                <div>
+                    <span>Quem enviu</span>
+                    <div class="message eu"><p>Pla</p></div>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span>Quem enviu</span>
+                    <div class="message outro"><p>Pla</p></div>
+                </div>
+            </li>
+
+        </ul>
+    </main>
+
+</div>
+<div class="input-container">
+    <input type="text" placeholder="Digite sua mensagem...">
+    <button>Enviar</button>
+</div>
 </body>
 </html>
