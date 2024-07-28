@@ -1,0 +1,21 @@
+package erick.br.chat.view.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+@EnableWebMvc
+public class ViewConfig  implements WebMvcConfigurer {
+    /**
+     * @param registry
+     */
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        WebMvcConfigurer.super.addViewControllers(registry);
+        registry.addViewController("/login").setViewName("view/login");
+        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+    }
+}
