@@ -45,20 +45,20 @@
             <form th:action="@{/create/newUser}" th:object="${usuario}" method="post">
                 <div class="mb-3">
                     <label for="nome" class="form-label">Seu Nome Completo</label>
-                    <input type="text" class="form-control" id="nome"  name="nome" th:field="*{nome}"  placeholder="Seu Nome " aria-describedby="emailHelp">
+                    <input type="text" required class="form-control" id="nome"  name="nome" th:field="*{nome}"  placeholder="Seu Nome " aria-describedby="emailHelp">
                 </div>
 
                 </br>
                 <div class="mb-3">
                     <label for="email" class="form-label">Seu Indereço De E-mail</label>
-                    <input type="email" class="form-control" id="email"  name="email" th:field="*{email}"  placeholder="Ex: xxxx@gmail.com " aria-describedby="emailHelp">
+                    <input type="email" required class="form-control" id="email"  name="email" th:field="*{email}"  placeholder="Ex: xxxx@gmail.com " aria-describedby="emailHelp">
                 </div>
 
                 </br>
 
                 <div class="mb-3">
                     <label for="senha" class="form-label">Sua Senha</label>
-                    <input type="password" class="form-control" id="senha" name="senha" th:field="*{senha}"  placeholder=" Ex:********">
+                    <input type="password" required class="form-control" id="senha" name="senha" th:field="*{senha}"  placeholder=" Ex:********">
                 </div>
                 <p><a href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Realize Seu Cadastro</a></p>
 

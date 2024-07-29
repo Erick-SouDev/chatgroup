@@ -18,7 +18,7 @@ public class ServicesRepositoryUser {
     @Autowired
     private UserRepository userRepository;
 
-    public  Usuario createUser(Usuario usuario){return   userRepository.saveAndFlush(usuario);
-    }
+    public  Usuario createUser(Usuario usuario){return   userRepository.saveAndFlush(usuario);}
+
 
 }

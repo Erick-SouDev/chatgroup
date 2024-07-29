@@ -31,7 +31,7 @@
                 </div>
             </nav>
             </br>
-            <form>
+            <form th:action="@{/login}" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Seu Indereço De E-mail</label>
                     <input type="email" class="form-control" id="email"  name="username" placeholder="Ex: xxxx@gmail.com " aria-describedby="emailHelp">
@@ -48,7 +48,7 @@
                 </br>
 
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button">Acessar Chat</button>
+                    <button class="btn btn-primary" type="submit">Acessar Chat</button>
                 </div>
             </form>
         </div>
