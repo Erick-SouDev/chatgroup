@@ -1,4 +1,4 @@
-package erick.br.chat.view.config;
+package erick.br.chat.configuration.view;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;

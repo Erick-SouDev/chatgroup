@@ -1,4 +1,4 @@
-package erick.br.chat.security.config;
+package erick.br.chat.configuration.security;
 
 import erick.br.chat.services.jpa.repository.autentication.AutenticationServicesUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +28,17 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .csrf(csrf -> csrf.disable())
-                .sessionManagement(sessionManagement ->
-                        sessionManagement.sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
+                .csrf(csrf -> csrf.disable()
+
+//                )
+//                .sessionManagement(sessionManagement ->
+//                        sessionManagement.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED).maximumSessions(2)
+//                )
                 )
+
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
+                                .requestMatchers(HttpMethod.GET, "/").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/login").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/create/user").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/create/newUser").permitAll()

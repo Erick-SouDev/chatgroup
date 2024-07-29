@@ -12,13 +12,15 @@ import java.rmi.server.UID;
 import java.util.UUID;
 
 @Repository
-@Transactional
 public interface UserRepository extends JpaRepository<Usuario, UUID> {
 
+    @Transactional
     @Query("select u from Usuario u where u.email = ?1")
     public Usuario buscarLoginDoUsuario(@Param("email") String email);
 
-
+    @Transactional
+    @Query("SELECT u.nome , u.id from Usuario as u where u.email = ?1")
+    public  Usuario pesquisarUsuarioEmail(@Param("email") String email);
 
 
 
