@@ -1,7 +1,7 @@
 package erick.br.chat.services.autentication;
 
 import erick.br.chat.model.entity.Usuario;
-import erick.br.chat.repository.user.UserRepository;
+import erick.br.chat.repository.user.RepositoryUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class ServicesAutenticationUser implements UserDetailsService {
 
     @Autowired
-    private UserRepository userRepository;
+    private RepositoryUser userRepository;
 
 
     @Override

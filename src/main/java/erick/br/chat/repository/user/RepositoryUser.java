@@ -9,7 +9,7 @@ import  erick.br.chat.model.entity.*;
 import java.util.UUID;
 
 @Repository
-public interface UserRepository extends JpaRepository<Usuario, UUID> {
+public interface RepositoryUser extends JpaRepository<Usuario, UUID> {
 
     @Transactional
     @Query("select u from Usuario u where u.email = ?1")

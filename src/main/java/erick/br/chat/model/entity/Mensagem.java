@@ -1,7 +1,6 @@
 package erick.br.chat.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
@@ -9,6 +8,8 @@ import java.util.Objects;
 @Table(name = "tb_mensagem")
 public class Mensagem {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String contetudo;
     private Usuario userId;

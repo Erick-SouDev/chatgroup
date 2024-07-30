@@ -2,7 +2,7 @@ package erick.br.chat.controller.chatpage;
 
 import erick.br.chat.model.dto.DtoUser;
 import erick.br.chat.model.entity.Usuario;
-import erick.br.chat.repository.user.UserRepository;
+import erick.br.chat.repository.user.RepositoryUser;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +15,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/")
-public class ControllerChatHome {
+public class ControllerPageChat {
 
     @Autowired
-    private UserRepository userRepository;
+    private RepositoryUser userRepository;
 
     private ModelMapper modelMapper;
 
-    public ControllerChatHome(){
+    public ControllerPageChat(){
         this.modelMapper = new ModelMapper();
     }
 

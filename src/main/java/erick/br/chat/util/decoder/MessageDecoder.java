@@ -1,43 +1,37 @@
 package erick.br.chat.util.decoder;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import erick.br.chat.model.entity.Mensagem;
 import jakarta.websocket.DecodeException;
 import jakarta.websocket.Decoder;
 import jakarta.websocket.EndpointConfig;
 
 public class MessageDecoder implements Decoder.Text<Mensagem> {
-    /**
-     * @param s
-     * @return
-     * @throws DecodeException
-     */
+
+    public  static  final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+
     @Override
-    public Mensagem decode(String s) throws DecodeException {
-        return null;
+    public Mensagem decode(String message) throws DecodeException {
+        try {
+            return OBJECT_MAPPER.readValue(message , Mensagem.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    /**
-     * @param s
-     * @return
-     */
+
     @Override
     public boolean willDecode(String s) {
         return false;
     }
 
-    /**
-     * Initialise the decoder. The default implementation is a NO-OP.
-     *
-     * @param endpointConfig The end-point configuration
-     */
     @Override
     public void init(EndpointConfig endpointConfig) {
         Text.super.init(endpointConfig);
     }
 
-    /**
-     * Destroy the decoder. The default implementation is a NO-OP.
-     */
+
     @Override
     public void destroy() {
         Text.super.destroy();
