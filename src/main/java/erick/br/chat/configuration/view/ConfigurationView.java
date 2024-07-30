@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-public class ViewConfig  implements WebMvcConfigurer {
+public class ConfigurationView implements WebMvcConfigurer {
     /**
      * @param registry
      */

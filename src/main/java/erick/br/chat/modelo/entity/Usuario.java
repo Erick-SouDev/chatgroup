@@ -1,18 +1,17 @@
-package erick.br.chat.model;
+package erick.br.chat.modelo.entity;
+
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.io.Serializable;
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-
 @Entity
 @Table(name = "tb_usuario")
-public class Usuario implements UserDetails {
+public class Usuario  implements UserDetails {
+
     @Transient
     private final long serialVersionUID = 1L;
 

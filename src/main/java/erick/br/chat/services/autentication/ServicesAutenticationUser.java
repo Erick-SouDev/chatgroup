@@ -1,7 +1,7 @@
-package erick.br.chat.services.jpa.repository.autentication;
+package erick.br.chat.services.autentication;
 
-import erick.br.chat.model.Usuario;
-import erick.br.chat.repository.UserRepository;
+import erick.br.chat.modelo.entity.Usuario;
+import erick.br.chat.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AutenticationServicesUser implements UserDetailsService {
+public class ServicesAutenticationUser implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;

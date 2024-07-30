@@ -1,21 +1,16 @@
-package erick.br.chat.controler;
+package erick.br.chat.controler.chatpage;
 
-import erick.br.chat.model.Usuario;
-import erick.br.chat.model.dtomodel.DtoUser;
-import erick.br.chat.repository.UserRepository;
+import erick.br.chat.modelo.dto.DtoUser;
+import erick.br.chat.repository.user.UserRepository;
 
-import jakarta.servlet.http.HttpSession;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.security.Principal;
 
 @Controller
 @RequestMapping("/")
