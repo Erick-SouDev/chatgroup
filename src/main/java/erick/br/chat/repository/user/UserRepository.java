@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import  erick.br.chat.modelo.entity.*;
+import  erick.br.chat.model.entity.*;
 import java.util.UUID;
 
 @Repository

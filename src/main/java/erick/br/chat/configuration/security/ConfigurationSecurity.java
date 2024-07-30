@@ -41,6 +41,8 @@ public class ConfigurationSecurity {
                                 .requestMatchers(HttpMethod.GET, "/login").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/create/user").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/create/newUser").permitAll()
+                                .requestMatchers( "/chatgroup").permitAll()
+
 
                                 .anyRequest().authenticated()
                 )

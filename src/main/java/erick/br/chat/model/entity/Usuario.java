@@ -1,4 +1,4 @@
-package erick.br.chat.modelo.entity;
+package erick.br.chat.model.entity;
 
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;

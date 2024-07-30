@@ -1,6 +1,6 @@
-package erick.br.chat.services.operation;
+package erick.br.chat.services.crud;
 
-import erick.br.chat.modelo.entity.Usuario;
+import erick.br.chat.model.entity.Usuario;
 import erick.br.chat.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

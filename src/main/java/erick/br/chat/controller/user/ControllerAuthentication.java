@@ -1,4 +1,4 @@
-package erick.br.chat.controler.user;
+package erick.br.chat.controller.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

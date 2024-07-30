@@ -1,7 +1,7 @@
-package erick.br.chat.controler.chatpage;
+package erick.br.chat.controller.chatpage;
 
-import erick.br.chat.modelo.dto.DtoUser;
-import erick.br.chat.modelo.entity.Usuario;
+import erick.br.chat.model.dto.DtoUser;
+import erick.br.chat.model.entity.Usuario;
 import erick.br.chat.repository.user.UserRepository;
 
 import org.modelmapper.ModelMapper;

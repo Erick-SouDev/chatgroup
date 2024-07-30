@@ -1,10 +1,11 @@
-package erick.br.chat.controler.websocket;
+package erick.br.chat.controller.websocket;
 
 import jakarta.websocket.*;
 import jakarta.websocket.server.ServerEndpoint;
+import org.springframework.stereotype.Component;
 
 
-
+@Component
 @ServerEndpoint(value = "/chatgroup")
 public class ControllerServerChat {
 

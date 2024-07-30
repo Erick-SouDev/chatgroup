@@ -11,7 +11,7 @@ import org.springframework.web.socket.config.annotation.EnableWebSocket;
 @SpringBootApplication
 @EnableWebSocket
 @EnableWebMvc
-@EntityScan(basePackages = {"erick.br.chat.modelo"})
+@EntityScan(basePackages = {"erick.br.chat.model"})
 @ComponentScan(basePackages = {"erick.br.chat.*"})
 public class ChatApplication {
 

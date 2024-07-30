@@ -1,9 +1,9 @@
-package erick.br.chat.controler.user;
+package erick.br.chat.controller.user;
 
 
 import erick.br.chat.exeption.error.ErrorNotSaveUserJpa;
-import erick.br.chat.modelo.entity.Usuario;
-import erick.br.chat.services.operation.ServicesRepositoryUser;
+import erick.br.chat.model.entity.Usuario;
+import erick.br.chat.services.crud.ServicesRepositoryUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;

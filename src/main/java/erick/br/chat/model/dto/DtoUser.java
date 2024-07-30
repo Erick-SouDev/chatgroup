@@ -1,4 +1,4 @@
-package erick.br.chat.modelo.dto;
+package erick.br.chat.model.dto;
 
 
 import java.util.UUID;
