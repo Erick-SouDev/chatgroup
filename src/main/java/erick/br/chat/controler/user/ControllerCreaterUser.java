@@ -2,6 +2,7 @@ package erick.br.chat.controler.user;
 
 
 import erick.br.chat.exeption.error.ErrorNotSaveUserJpa;
+import erick.br.chat.modelo.entity.Usuario;
 import erick.br.chat.services.operation.ServicesRepositoryUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -14,14 +15,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller(value = "ControlePaginaCadastroUser")
 @RequestMapping(value = {"/create"} , produces = {"text/html"})
-public class ControlerCreaterUser  {
+public class ControllerCreaterUser {
 
     private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
     private ServicesRepositoryUser servicesRepositoryUser;
 
-    public  ControlerCreaterUser(){
+    public ControllerCreaterUser(){
         System.out.println("Subindo Minha Aplicação Web");
     }
 
