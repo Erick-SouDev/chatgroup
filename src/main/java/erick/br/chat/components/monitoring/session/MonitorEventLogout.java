@@ -1,5 +1,7 @@
 package erick.br.chat.components.monitoring.session;
 
+import erick.br.chat.controller.websocket.ControllerServerChat;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.security.authentication.event.LogoutSuccessEvent;
 import org.springframework.stereotype.Component;
@@ -11,6 +13,5 @@ public class MonitorEventLogout implements ApplicationListener<LogoutSuccessEven
     @Override
     public void onApplicationEvent(LogoutSuccessEvent event) {
         System.out.println(event.getAuthentication() + " Usuario deslogou");
-
     }
 }

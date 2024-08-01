@@ -191,14 +191,43 @@
             </li>
         </ul>
         <div class="input-container">
-            <input type="text" placeholder="Digite sua mensagem...">
+            <input type="text" id="menssage" placeholder="Digite sua mensagem...">
             <input type="hidden" id="idUser" th:value="${id}">
 
-            <button>Enviar</button>
+            <button type="button"  onclick="sendMessage()" id="send">Enviar</button>
         </div>
     </main>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js" integrity="sha512-1QvjE7BtotQjkq8PxLeF6P46gEpBRXuskzIVgjFpekzFVF4yjRgrQvTG1MTOJ3yQgvTteKAcO7DSZI92+u/yZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+      var status = document.getElementById("status")
+      var btSend = document.getElementById("send")
+      var inputMessage = document.getElementById("menssage")
 
+
+
+      const socket = new WebSocket('ws://localhost:8080/chatgroup');
+      socket.onopen = function(event) {
+          console.log('Conectado ao WebSocket');
+      };
+
+
+      socket.onmessage = function(event) {
+          const data = JSON.parse(event.data);
+      };
+
+      socket.onclose = function(event) {
+      };
+
+      socket.onerror = function(error) {
+
+      };
+
+      function sendMessage(){
+          socket.send(inputMessage.value)
+      }
+
+  </script>
 </body>
 </html>

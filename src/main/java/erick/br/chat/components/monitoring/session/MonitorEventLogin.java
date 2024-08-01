@@ -8,14 +8,9 @@ import org.springframework.stereotype.Component;
 public class MonitorEventLogin implements   ApplicationListener<AuthenticationSuccessEvent>{
 
 
-//    @Override
-//    public boolean supportsAsyncExecution() {
-//        return ApplicationListener.super.supportsAsyncExecution();
-//    }
-
     @Override
     public void onApplicationEvent(AuthenticationSuccessEvent event) {
-     System.out.println(event.getAuthentication() + " Usuario Logado ");
+
 
     }
 }
