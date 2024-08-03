@@ -6,12 +6,14 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "tb_mensagem")
-public class Mensagem {
+public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String contetudo;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
     private Usuario userId;
 
     public String getContetudo() {
@@ -42,7 +44,7 @@ public class Mensagem {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Mensagem mensagem = (Mensagem) o;
+        Message mensagem = (Message) o;
         return Objects.equals(id, mensagem.id);
     }
 

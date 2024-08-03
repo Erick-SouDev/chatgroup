@@ -22,12 +22,12 @@ public class ControllerServerChat {
     }
 
 
-
-
     @OnOpen
     public void onOpen(Session session) {
         System.out.println("Connected ... " + session.getId());
         sessions.put(session.getId() , session);
+
+
     }
 
     @OnClose
@@ -47,4 +47,8 @@ public class ControllerServerChat {
         t.printStackTrace();
     }
 
+
+    public static  void  alertOnUserJoin(){
+
+    }
 }

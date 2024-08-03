@@ -2,17 +2,17 @@ package erick.br.chat.util.encoder;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import erick.br.chat.model.entity.Mensagem;
+import erick.br.chat.model.entity.Message;
 import jakarta.websocket.EncodeException;
 import jakarta.websocket.Encoder;
 import jakarta.websocket.EndpointConfig;
 
 
-public class MessageEncoder implements Encoder.Text<Mensagem> {
+public class MessageEncoder implements Encoder.Text<Message> {
 
     public  static  final  ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     @Override
-    public String encode(Mensagem object) throws EncodeException {
+    public String encode(Message object) throws EncodeException {
         try {
             return  OBJECT_MAPPER.writeValueAsString(object);
         } catch (JsonProcessingException e) {

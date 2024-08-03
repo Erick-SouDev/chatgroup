@@ -204,7 +204,7 @@
       var status = document.getElementById("status")
       var btSend = document.getElementById("send")
       var inputMessage = document.getElementById("menssage")
-
+      
 
 
       const socket = new WebSocket('ws://localhost:8080/chatgroup');
@@ -228,6 +228,7 @@
           socket.send(inputMessage.value)
       }
 
+     
   </script>
 </body>
 </html>

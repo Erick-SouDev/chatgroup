@@ -1,13 +1,11 @@
 package erick.br.chat.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_usuario")
@@ -21,7 +19,12 @@ public class Usuario  implements UserDetails {
     private UUID id;
     private String nome;
     private String email;
+    @JsonIgnore
     private String senha;
+
+    @OneToMany(mappedBy = "userId" , cascade = CascadeType.ALL , orphanRemoval = true)
+    private List<Message> messageList = new ArrayList<>();
+
 
     public String getSenha() {
         return senha;
@@ -55,6 +58,8 @@ public class Usuario  implements UserDetails {
         this.id = id;
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -76,6 +81,7 @@ public class Usuario  implements UserDetails {
                 ", nome='" + nome + '\'' +
                 ", senha='" + senha + '\'' +
                 '}';
+
     }
 
     /**
