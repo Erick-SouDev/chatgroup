@@ -1,28 +1,28 @@
 package erick.br.chat.services.autentication;
 
+import erick.br.chat.exeption.error.UserDoesNotExistException;
+import erick.br.chat.implents.authtication.lmplementAuthentication;
 import erick.br.chat.model.entity.Usuario;
 import erick.br.chat.repository.user.RepositoryUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 import org.springframework.stereotype.Service;
 
 @Service
-public class ServicesAutenticationUser implements UserDetailsService {
+public class ServicesAutenticationUser implements lmplementAuthentication {
 
     @Autowired
     private RepositoryUser userRepository;
 
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuario userEncontrado = userRepository.buscarLoginDoUsuario(username);
-        if(userEncontrado == null){
-            throw  new UsernameNotFoundException("Usuario Não foi encontrado");
+    public Usuario authenticationUser(String user, String password) {
+        Usuario usuarioEncontrado = userRepository.buscarUsuario(user, password);
+        if (!(usuarioEncontrado != null)) {
+            new UserDoesNotExistException("Usuario Não pode ser encontrado");
         }
-        return new User(userEncontrado.getUsername(), userEncontrado.getSenha(), true, true, true, true, userEncontrado.getAuthorities());
 
+        return usuarioEncontrado;
     }
 }
+

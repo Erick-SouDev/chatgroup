@@ -5,7 +5,6 @@ import erick.br.chat.exeption.error.ErrorNotSaveUserJpa;
 import erick.br.chat.model.entity.Usuario;
 import erick.br.chat.services.operations.user.ServicesRepositoryUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = {"/create"} , produces = {"text/html"})
 public class ControllerPageCreaterUser {
 
-    private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+
 
     @Autowired
     private ServicesRepositoryUser servicesRepositoryUser;
@@ -36,8 +35,6 @@ public class ControllerPageCreaterUser {
     @PostMapping(value = {"/newUser"})
     public ModelAndView salvarUsuario(@ModelAttribute(value = "usuario") Usuario usuario){
         ModelAndView view = new ModelAndView("view/usuario");
-        String senhaCriptografada  = bCryptPasswordEncoder.encode(usuario.getPassword());
-        usuario.setSenha(senhaCriptografada);
         Usuario salvo = servicesRepositoryUser.createUser(usuario);
 
         if(!(salvo != null)){

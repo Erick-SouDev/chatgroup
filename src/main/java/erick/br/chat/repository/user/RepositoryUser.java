@@ -12,8 +12,8 @@ import java.util.UUID;
 public interface RepositoryUser extends JpaRepository<Usuario, UUID> {
 
     @Transactional
-    @Query("select u from Usuario u where u.email = ?1")
-    public Usuario buscarLoginDoUsuario(@Param("email") String email);
+    @Query("select u from Usuario u where u.email = ?1 and u.senha = ?2")
+    public Usuario buscarUsuario(@Param("email") String email , @Param("senha") String senha);
 
     @Transactional
     @Query("SELECT u.nome , u.id from Usuario as u where u.email = ?1")

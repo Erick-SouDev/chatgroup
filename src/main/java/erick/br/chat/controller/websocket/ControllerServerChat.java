@@ -15,9 +15,11 @@ public class ControllerServerChat {
 
     private ConcurrentHashMap<String, Session> sessions;
 
+
     public ControllerServerChat() {
         sessions = new ConcurrentHashMap<>();
         System.out.println("Servidor rodando");
+
 
     }
 
@@ -26,6 +28,8 @@ public class ControllerServerChat {
     public void onOpen(Session session) {
         System.out.println("Connected ... " + session.getId());
         sessions.put(session.getId() , session);
+
+
 
 
     }

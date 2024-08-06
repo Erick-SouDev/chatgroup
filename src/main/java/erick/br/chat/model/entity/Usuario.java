@@ -2,14 +2,14 @@ package erick.br.chat.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
+
+import java.io.Serializable;
 import java.util.*;
 
 @Entity
 @Table(name = "tb_usuario")
-public class Usuario  implements UserDetails {
+public class Usuario  implements Serializable {
 
     @Transient
     private final long serialVersionUID = 1L;
@@ -84,59 +84,5 @@ public class Usuario  implements UserDetails {
 
     }
 
-    /**
-     * @return
-     */
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
-    }
 
-    /**
-     * @return
-     */
-    @Override
-    public String getPassword() {
-        return this.senha;
-    }
-
-    /**
-     * @return
-     */
-    @Override
-    public String getUsername() {
-        return this.email;
-    }
-
-    /**
-     * @return
-     */
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
-
-    /**
-     * @return
-     */
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    /**
-     * @return
-     */
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    /**
-     * @return
-     */
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
 }

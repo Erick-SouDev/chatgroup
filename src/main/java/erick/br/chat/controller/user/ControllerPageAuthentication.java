@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = {"/"} ,produces = {"text/html"})
+
 public class ControllerPageAuthentication {
-    @GetMapping(value = {"/login"})
+    @GetMapping("/")
     public String getPageLogin(){
         return  "view/login";
     }
